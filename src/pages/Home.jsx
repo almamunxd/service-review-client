@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
+import { motion } from "motion/react"
 const Home = () => {
     const [services, setServices] = useState([]);
 
@@ -19,18 +18,42 @@ const Home = () => {
     return (
         <div>
             {/* Banner Section */}
-            <div className="carousel w-full h-96">
-                <div className="carousel-item">
-                    <img src="/images/banner1.jpg" className="w-full" alt="Banner 1" />
-                    <h2 className="absolute text-white text-4xl font-bold">Welcome to Service Review</h2>
+            <div className="carousel w-full">
+                <div id="slide1" className="carousel-item relative w-full">
+                    <img
+                        src="https://collider.com/wp-content/uploads/inception_movie_poster_banner_01.jpg"
+                        className="w-full h-[307px] object-cover" />
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide2" className="btn btn-circle">❯</a>
+                    </div>
                 </div>
-                <div className="carousel-item">
-                    <img src="/images/banner2.jpg" className="w-full" alt="Banner 2" />
-                    <h2 className="absolute text-white text-4xl font-bold">Find the Best Services</h2>
+                <div id="slide2" className="carousel-item relative w-full">
+                    <img
+                        src="https://goggler.my/wp-content/uploads/2019/12/JM2_INTL_30Sht_BRIDGE_03-e1575889045252.jpg"
+                        className="w-full h-[307px] object-cover" />
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide1" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❯</a>
+                    </div>
                 </div>
-                <div className="carousel-item">
-                    <img src="/images/banner3.jpg" className="w-full" alt="Banner 3" />
-                    <h2 className="absolute text-white text-4xl font-bold">Share Your Experience</h2>
+                <div id="slide3" className="carousel-item relative w-full">
+                    <img
+                        src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b307d127256085.560502e8b209e.jpg"
+                        className="w-full h-[307px] object-cover" />
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide2" className="btn btn-circle">❮</a>
+                        <a href="#slide4" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" className="carousel-item relative w-full">
+                    <img
+                        src="https://comicsagogo.files.wordpress.com/2011/11/tintin-movie-poster-horizontal.jpg"
+                        className="w-full h-[307px] object-cover" />
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide3" className="btn btn-circle">❮</a>
+                        <a href="#slide1" className="btn btn-circle">❯</a>
+                    </div>
                 </div>
             </div>
 
