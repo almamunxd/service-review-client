@@ -5,6 +5,7 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DynamicTitle from '../shared/DynamicTitle';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -59,6 +60,7 @@ const Login = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen">
+            <DynamicTitle title="Login" />
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-2xl font-bold">Login now!</h1>

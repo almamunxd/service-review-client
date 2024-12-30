@@ -4,6 +4,7 @@ import { updateProfile } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthContext from '../../context/AuthContext';
+import DynamicTitle from '../shared/DynamicTitle';
 
 const Register = () => {
     const [success, setSuccess] = useState(false);
@@ -69,6 +70,7 @@ const Register = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen">
+            <DynamicTitle title="Register" />
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-2xl font-bold">Register Now</h1>

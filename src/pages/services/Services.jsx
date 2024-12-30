@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DynamicTitle from '../shared/DynamicTitle';
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -44,6 +45,7 @@ const Services = () => {
 
     return (
         <div className="p-6">
+            <DynamicTitle title="Services" />
             <h1 className="text-2xl font-bold mb-4">Services</h1>
             <form onSubmit={handleSearch} className="flex gap-4 mb-4">
                 <input

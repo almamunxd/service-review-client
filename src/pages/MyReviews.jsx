@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AuthContext from "../context/AuthContext";
 import { Rating } from "react-simple-star-rating";
+import DynamicTitle from "./shared/DynamicTitle";
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
@@ -94,6 +95,7 @@ const MyReviews = () => {
 
     return (
         <div className="p-6">
+            <DynamicTitle title="My Reviews" />
             <h1 className="text-2xl font-bold mb-4">My Reviews</h1>
             {reviews.length > 0 ? (
                 <div className="space-y-4">

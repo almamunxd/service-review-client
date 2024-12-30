@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthContext from '../context/AuthContext';
 import { Rating } from 'react-simple-star-rating';
+import DynamicTitle from './shared/DynamicTitle';
 
 const ServiceDetails = () => {
     const { id } = useParams();
@@ -51,41 +52,41 @@ const ServiceDetails = () => {
     };
 
     const handleAddReview = async (e) => {
-    e.preventDefault();
-    if (!reviewText.trim() || !rating) {
-        return toast.error('Please provide both a review and a rating.');
-    }
-
-    const review = {
-        serviceId: service._id,
-        userId: user.email,
-        userName: user.displayName || 'Anonymous',
-        userPhoto: user.photoURL || '/default-avatar.png',
-        reviewText: reviewText,
-        rating: rating,
-        postedDate: new Date().toISOString(),
-    };
-
-    try {
-        const response = await fetch('http://localhost:3000/reviews', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(review),
-        });
-
-        const data = await response.json();
-        if (data.success) {
-            toast.success('Review added successfully!');
-            setReviewText('');
-            setRating(0);
-            fetchReviews();
-        } else {
-            toast.error(data.message || 'Failed to add review');
+        e.preventDefault();
+        if (!reviewText.trim() || !rating) {
+            return toast.error('Please provide both a review and a rating.');
         }
-    } catch (error) {
-        toast.error(`Error: ${error.message}`);
-    }
-};
+
+        const review = {
+            serviceId: service._id,
+            userId: user.email,
+            userName: user.displayName || 'Anonymous',
+            userPhoto: user.photoURL || '/default-avatar.png',
+            reviewText: reviewText,
+            rating: rating,
+            postedDate: new Date().toISOString(),
+        };
+
+        try {
+            const response = await fetch('http://localhost:3000/reviews', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(review),
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                toast.success('Review added successfully!');
+                setReviewText('');
+                setRating(0);
+                fetchReviews();
+            } else {
+                toast.error(data.message || 'Failed to add review');
+            }
+        } catch (error) {
+            toast.error(`Error: ${error.message}`);
+        }
+    };
 
 
     if (loading) return <div>Loading...</div>;
@@ -93,6 +94,7 @@ const ServiceDetails = () => {
 
     return (
         <div className="p-6">
+            <DynamicTitle title="Details" />
             <h1 className="text-3xl font-bold mb-4">{service.title}</h1>
             <img src={service.image} alt={service.title} className="w-full h-60 object-cover mb-4" />
             <p className="text-gray-700">{service.description}</p>

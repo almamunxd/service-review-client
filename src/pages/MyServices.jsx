@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DynamicTitle from './shared/DynamicTitle';
 
 const MyServices = () => {
     const { user } = useContext(AuthContext);
@@ -88,7 +89,9 @@ const MyServices = () => {
     );
 
     return (
+
         <div className="p-6">
+            <DynamicTitle title="MyServices" />
             <h1 className="text-2xl font-bold mb-4">My Services</h1>
             <input
                 type="text"

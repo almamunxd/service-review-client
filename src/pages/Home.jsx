@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // Placeholder for later animation
+import DynamicTitle from "./shared/DynamicTitle";
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -19,6 +20,7 @@ const Home = () => {
 
     return (
         <div>
+            <DynamicTitle title="Home" />
             {/* Banner Section */}
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full mx-auto text-center">

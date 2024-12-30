@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DynamicTitle from './shared/DynamicTitle';
 
 const AddService = () => {
     const { user } = useContext(AuthContext); // To get the logged-in user's info
@@ -68,6 +69,7 @@ const AddService = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen">
+            <DynamicTitle title="Add Service" />
             <div className="hero-content flex-col">
                 <h1 className="text-2xl font-bold mb-4">Add New Service</h1>
                 <form onSubmit={handleAddService} className="card bg-base-100 w-full max-w-sm p-4">
