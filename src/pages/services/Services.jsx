@@ -39,7 +39,7 @@ const Services = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        setPage(1); // Reset to page 1 on new search
+        setPage(1);  
         fetchServices();
     };
 
