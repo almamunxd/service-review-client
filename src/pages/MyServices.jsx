@@ -13,7 +13,7 @@ const MyServices = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:3000/myServices?email=${user.email}`)
+            fetch(`https://service-review-server-seven.vercel.app/myServices?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.success) {
@@ -31,7 +31,7 @@ const MyServices = () => {
 
     const handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete this service?')) {
-            fetch(`http://localhost:3000/services/${id}`, {
+            fetch(`https://service-review-server-seven.vercel.app/services/${id}`, {
                 method: 'DELETE',
             })
                 .then((res) => res.json())
@@ -58,7 +58,7 @@ const MyServices = () => {
             price: parseFloat(e.target.price.value),
         };
 
-        fetch(`http://localhost:3000/services/${editingService._id}`, {
+        fetch(`https://service-review-server-seven.vercel.app/services/${editingService._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

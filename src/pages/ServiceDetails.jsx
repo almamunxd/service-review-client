@@ -23,7 +23,7 @@ const ServiceDetails = () => {
     const fetchServiceDetails = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:3000/services/${id}`);
+            const response = await fetch(`https://service-review-server-seven.vercel.app/services/${id}`);
             const data = await response.json();
             if (data.success) {
                 setService(data.data);
@@ -39,7 +39,7 @@ const ServiceDetails = () => {
 
     const fetchReviews = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/services/${id}/reviews`);
+            const response = await fetch(`https://service-review-server-seven.vercel.app/services/${id}/reviews`);
             const data = await response.json();
             if (data.success) {
                 setReviews(data.data);
@@ -68,7 +68,7 @@ const ServiceDetails = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/reviews', {
+            const response = await fetch('https://service-review-server-seven.vercel.app/reviews', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(review),

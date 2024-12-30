@@ -11,11 +11,11 @@ const MyReviews = () => {
     const [loading, setLoading] = useState(true);
     const [editingReview, setEditingReview] = useState(null);
 
-    // Fetch reviews for the logged-in user
+
     useEffect(() => {
         if (user) {
             console.log(`Fetching reviews for user: ${user.email}`);
-            fetch(`http://localhost:3000/myReviews?email=${user.email}`)
+            fetch(`https://service-review-server-seven.vercel.app/myReviews?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
                     console.log("Fetched Reviews Data:", data); // Log fetched data
@@ -33,10 +33,10 @@ const MyReviews = () => {
     }, [user]);
 
 
-    // Delete a review
+
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this review?")) {
-            fetch(`http://localhost:3000/reviews/${id}`, {
+            fetch(`https://service-review-server-seven.vercel.app/reviews/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -54,7 +54,7 @@ const MyReviews = () => {
         }
     };
 
-    // Update a review
+
     const handleUpdate = (e) => {
         e.preventDefault();
 
@@ -63,7 +63,7 @@ const MyReviews = () => {
             rating: parseFloat(e.target.rating.value),
         };
 
-        fetch(`http://localhost:3000/reviews/${editingReview._id}`, {
+        fetch(`https://service-review-server-seven.vercel.app/reviews/${editingReview._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -101,7 +101,7 @@ const MyReviews = () => {
                 <div className="space-y-4">
                     {reviews.map((review) => (
                         <div key={review._id} className="card bg-base-100 shadow-lg p-4">
-                            <h2 className="font-bold text-lg">{review.title}</h2> {/* Service title */}
+                            <h2 className="font-bold text-lg">{review.title}</h2>
                             <p className="text-gray-700">{review.reviewText}</p>
                             <Rating readonly={true} initialValue={review.rating} size={20} SVGstyle={{ display: 'inline' }} />
                             <div className="flex space-x-2 mt-4">
@@ -132,7 +132,6 @@ const MyReviews = () => {
                 <div>No reviews found.</div>
             )}
 
-            {/* Update Modal */}
             {editingReview && (
                 <div className={`modal ${editingReview ? "modal-open" : ""}`}>
                     <div className="modal-box">

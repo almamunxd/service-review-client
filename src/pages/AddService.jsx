@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import DynamicTitle from './shared/DynamicTitle';
 
 const AddService = () => {
-    const { user } = useContext(AuthContext);  
+    const { user } = useContext(AuthContext);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -24,11 +24,11 @@ const AddService = () => {
             price: parseFloat(e.target.price.value),
             image: e.target.image.value,
             addedDate: new Date().toISOString(),
-            userEmail: user.email,  
+            userEmail: user.email,
         };
 
         try {
-            const response = await fetch('http://localhost:3000/services', {
+            const response = await fetch('https://service-review-server-seven.vercel.app/services', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const AddService = () => {
                     icon: 'success',
                     confirmButtonText: 'OK',
                 }).then(() => {
-                    navigate('/');  
+                    navigate('/');
                 });
             } else {
                 const error = await response.json();

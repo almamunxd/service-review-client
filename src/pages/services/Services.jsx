@@ -21,7 +21,7 @@ const Services = () => {
         setLoading(true);
         try {
             const response = await fetch(
-                `http://localhost:3000/services?page=${page}&limit=6&search=${search}&category=${category}`
+                `https://service-review-server-seven.vercel.app/services?page=${page}&limit=6&search=${search}&category=${category}`
             );
             const data = await response.json();
             if (data.success) {
@@ -39,7 +39,7 @@ const Services = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        setPage(1);  
+        setPage(1);
         fetchServices();
     };
 

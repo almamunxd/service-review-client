@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"; // Placeholder for later animation
+import { motion } from "framer-motion";
 import DynamicTitle from "./shared/DynamicTitle";
 
 const Home = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        // Fetch the first 6 featured services from the backend
-        fetch("http://localhost:3000/services?limit=6")
+
+        fetch("https://service-review-server-seven.vercel.app/services?limit=6")
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {
@@ -79,7 +79,7 @@ const Home = () => {
                         <motion.div
                             key={service._id}
                             className="card shadow-lg border bg-violet-300 text-black"
-                        // Placeholder animation, update later
+
                         >
                             <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
                             <div className="card-body ">
@@ -95,7 +95,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Meet Our Partners Section */}
             <div className="bg-sky-300 px-6 py-10 text-black">
                 <h2 className="text-3xl font-bold mb-6">Meet Our Partners</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
