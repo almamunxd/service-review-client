@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import DynamicTitle from './shared/DynamicTitle';
 
 const AddService = () => {
-    const { user } = useContext(AuthContext); // To get the logged-in user's info
+    const { user } = useContext(AuthContext);  
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const AddService = () => {
             price: parseFloat(e.target.price.value),
             image: e.target.image.value,
             addedDate: new Date().toISOString(),
-            userEmail: user.email, // Auto-filled from the logged-in user
+            userEmail: user.email,  
         };
 
         try {
@@ -43,7 +43,7 @@ const AddService = () => {
                     icon: 'success',
                     confirmButtonText: 'OK',
                 }).then(() => {
-                    navigate('/'); // Redirect to home after clicking OK
+                    navigate('/');  
                 });
             } else {
                 const error = await response.json();
