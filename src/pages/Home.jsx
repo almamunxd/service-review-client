@@ -23,13 +23,13 @@ const Home = () => {
             <DynamicTitle title="Home" />
             {/* Banner Section */}
             <div className="carousel w-full">
+                // ...existing code...
                 <div id="slide1" className="carousel-item relative w-full mx-auto text-center">
-                    <img
-                        src="https://next4.io/wp-content/uploads/3-ways-premium-tracking-can-upgrade-your-services-v2.jpg"
-                        className="w-full h-[400px] object-cover"
-                        alt="Business services"
+                    <img className="w-full h-[400px] object-cover" 
+                        src="https://i.ibb.co.com/7k54tvJ/DALL-E-2024-12-31-03-24-49-A-vibrant-and-professional-website-banner-carousel-image-without-any-text.webp"
+                        alt="Business services "
                     />
-                    <div className="absolute top-1/3 left-10 text-black text-center justify-center items-center mx-auto">
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-black">
                         <h2 className="text-4xl font-bold text-center">Discover Premium Services</h2>
                         <p className="text-xl mt-2">Find the best services for your needs.</p>
                     </div>
@@ -39,12 +39,12 @@ const Home = () => {
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfRWXj8x8CGtKpiJ6n-ETev6kLOtsZynySQg&s"
+                    <img 
+                        src="https://i.ibb.co.com/tXqxj21/DALL-E-2024-12-31-03-27-12-A-vibrant-and-professional-website-banner-carousel-image-without-any-text.webp"
                         className="w-full h-[400px] object-cover"
                         alt="Technology services"
                     />
-                    <div className="absolute top-1/3 left-10 text-white">
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
                         <h2 className="text-4xl font-bold">Innovative Solutions</h2>
                         <p className="text-xl mt-2">Explore cutting-edge services today.</p>
                     </div>
@@ -59,7 +59,7 @@ const Home = () => {
                         className="w-full h-[400px] object-cover"
                         alt="General services"
                     />
-                    <div className="absolute top-1/3 left-10 text-white">
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
                         <h2 className="text-4xl font-bold">Your Trusted Platform</h2>
                         <p className="text-xl mt-2">Share and find trustworthy reviews.</p>
                     </div>
@@ -68,6 +68,7 @@ const Home = () => {
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>
+                // ...existing code...
             </div>
 
             {/* Featured Services Section */}

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@coreui/react": "^5.4.1",
     "firebase": "^11.1.0",
     "localforage": "^1.10.0",
     "match-sorter": "^8.0.0",
@@ -20,7 +21,9 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^7.1.1",
     "react-simple-star-rating": "^5.1.7",
+    "react-slick": "^0.30.3",
     "react-toastify": "^11.0.2",
+    "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.15.3"
   },

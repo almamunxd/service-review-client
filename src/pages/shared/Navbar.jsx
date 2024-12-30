@@ -65,7 +65,8 @@ const Navber = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">RateBoard</a>
+                    <img className='h-14' src="https://i.ibb.co.com/XZnJp78/DALLE2024-12-3103-35-46-Amodernandsleeklogodesignfor-Rate-Boardaservicereviewsystem-Thelogofeaturesa.png" alt="" />
+                    <a className="btn  btn-ghost text-xl hidden sm:block">RateBoard</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">{links}</ul>
