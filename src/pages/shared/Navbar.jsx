@@ -19,7 +19,7 @@ const Navber = () => {
         <>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/services">Services</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
+
             {!user && (
                 <>
                     <li><NavLink to="/login">Login</NavLink></li>
@@ -31,7 +31,7 @@ const Navber = () => {
                     <li><NavLink to="/myReviews">My Reviews</NavLink></li>
                     <li><NavLink to="/addService">Add Services</NavLink></li>
                     <li><NavLink to="/myServices">My Services</NavLink></li>
-                    <li><NavLink to="/profile">Profile</NavLink></li>
+
                 </>
             )}
         </>
