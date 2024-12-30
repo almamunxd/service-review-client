@@ -74,14 +74,14 @@ const Services = () => {
             ) : services.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service) => (
-                        <div key={service._id} className="card bg-base-100 shadow-lg">
+                        <div key={service._id} className="card bg-violet-300 shadow-lg">
                             <figure>
                                 <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
                             </figure>
-                            <div className="card-body">
+                            <div className="card-body text-black">
                                 <h2 className="card-title">{service.title}</h2>
                                 <p>{service.description}</p>
-                                <p className="text-sm text-gray-500">Category: {service.category}</p>
+                                <p className="text-sm text-black">Category: {service.category}</p>
                                 <p className="font-bold">Price: ${service.price.toFixed(2)}</p>
                                 <button
                                     className="btn btn-primary mt-4"

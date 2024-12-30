@@ -25,13 +25,13 @@ const Home = () => {
             <div className="carousel w-full">
                 // ...existing code...
                 <div id="slide1" className="carousel-item relative w-full mx-auto text-center">
-                    <img className="w-full h-[400px] object-cover" 
+                    <img className="w-full h-[400px] object-cover"
                         src="https://i.ibb.co.com/7k54tvJ/DALL-E-2024-12-31-03-24-49-A-vibrant-and-professional-website-banner-carousel-image-without-any-text.webp"
                         alt="Business services "
                     />
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-black">
-                        <h2 className="text-4xl font-bold text-center">Discover Premium Services</h2>
-                        <p className="text-xl mt-2">Find the best services for your needs.</p>
+                        <h2 className="text-4xl font-bold text-center bg-slate-100 rounded-xl p-2">Discover Premium Services</h2>
+                        <p className="text-xl mt-2 bg-slate-100 rounded-xl p-2">Find the best services for your needs.</p>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
                         <a href="#slide3" className="btn btn-circle">❮</a>
@@ -39,14 +39,14 @@ const Home = () => {
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <img 
+                    <img
                         src="https://i.ibb.co.com/tXqxj21/DALL-E-2024-12-31-03-27-12-A-vibrant-and-professional-website-banner-carousel-image-without-any-text.webp"
                         className="w-full h-[400px] object-cover"
                         alt="Technology services"
                     />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-                        <h2 className="text-4xl font-bold">Innovative Solutions</h2>
-                        <p className="text-xl mt-2">Explore cutting-edge services today.</p>
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-black">
+                        <h2 className="text-4xl font-bold bg-slate-100 rounded-xl p-2">Innovative Solutions</h2>
+                        <p className="text-xl mt-2 bg-slate-100 rounded-xl p-2">Explore cutting-edge services today.</p>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
                         <a href="#slide1" className="btn btn-circle">❮</a>
@@ -55,13 +55,13 @@ const Home = () => {
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
                     <img
-                        src="https://share.trustpilot.com/images/company-rating?locale=en-GB&businessUnitId=60da3ed5fed31600017f9149"
+                        src="https://i.ibb.co.com/QfnVvdp/DALL-E-2024-12-31-03-59-46-A-highly-professional-and-visually-captivating-website-banner-carousel-im.webp"
                         className="w-full h-[400px] object-cover"
                         alt="General services"
                     />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-                        <h2 className="text-4xl font-bold">Your Trusted Platform</h2>
-                        <p className="text-xl mt-2">Share and find trustworthy reviews.</p>
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-black">
+                        <h2 className="text-4xl font-bold bg-slate-100 rounded-xl p-2">Your Trusted Platform</h2>
+                        <p className="text-xl mt-2 bg-slate-100 rounded-xl p-2">Share and find trustworthy reviews.</p>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
                         <a href="#slide2" className="btn btn-circle">❮</a>
@@ -74,15 +74,15 @@ const Home = () => {
             {/* Featured Services Section */}
             <div className="px-6 py-10">
                 <h2 className="text-3xl font-bold mb-6">Featured Services</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service) => (
-                        <motion.div
+                        <motion.div 
                             key={service._id}
-                            className="card shadow-lg border"
+                            className="card shadow-lg border bg-violet-300"
                         // Placeholder animation, update later
                         >
                             <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
-                            <div className="card-body">
+                            <div className="card-body ">
                                 <h3 className="card-title text-lg font-semibold">{service.title}</h3>
                                 <p className="text-gray-600">{service.description.slice(0, 100)}...</p>
                                 <p className="font-bold">Price: ${service.price.toFixed(2)}</p>
@@ -96,7 +96,7 @@ const Home = () => {
             </div>
 
             {/* Meet Our Partners Section */}
-            <div className="bg-gray-100 px-6 py-10">
+            <div className="bg-sky-300 px-6 py-10 text-black">
                 <h2 className="text-3xl font-bold mb-6">Meet Our Partners</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div className="flex flex-col items-center">
@@ -139,19 +139,19 @@ const Home = () => {
             </div>
 
             {/* Extra Section 1: User Testimonials */}
-            <div className="bg-blue-50 px-6 py-10">
+            <div className="bg-teal-200 px-6 py-10 text-black">
                 <h2 className="text-3xl font-bold mb-6">What Our Users Say</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="p-4 bg-white shadow-lg rounded-md">
-                        <p className="text-gray-700 italic">"This platform is amazing. It has helped me find the best services for my needs!"</p>
+                <div className="grid grid-cols-1 text-black sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="p-4 bg-indigo-500 shadow-lg rounded-md">
+                        <p className="  italic">"This platform is amazing. It has helped me find the best services for my needs!"</p>
                         <p className="font-bold text-right mt-4">- Jane Doe</p>
                     </div>
-                    <div className="p-4 bg-white shadow-lg rounded-md">
-                        <p className="text-gray-700 italic">"The reviews are genuine and trustworthy. I highly recommend ServiceReview."</p>
+                    <div className="p-4 bg-indigo-500 shadow-lg rounded-md">
+                        <p className="  italic">"The reviews are genuine and trustworthy. I highly recommend ServiceReview."</p>
                         <p className="font-bold text-right mt-4">- John Smith</p>
                     </div>
-                    <div className="p-4 bg-white shadow-lg rounded-md">
-                        <p className="text-gray-700 italic">"The platform is user-friendly, and I found the best services here. Highly satisfied!"</p>
+                    <div className="p-4 bg-indigo-500 shadow-lg rounded-md">
+                        <p className="  italic">"The platform is user-friendly, and I found the best services here. Highly satisfied!"</p>
                         <p className="font-bold text-right mt-4">- Sarah Johnson
                         </p>
                     </div>
@@ -160,19 +160,19 @@ const Home = () => {
 
             {/* Extra Section 2: Why Choose Us */}
             <div className="px-6 py-10">
-                <h2 className="text-3xl font-bold mb-6">Why Choose Us</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="p-4 bg-white shadow-lg rounded-md">
+                <h2 className="text-3xl font-bold mb-6 text-green-300">Why Choose Us</h2>
+                <div className=" text-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="p-4 bg-green-400 shadow-lg rounded-md">
                         <h3 className="font-bold text-lg">Trustworthy Reviews</h3>
-                        <p className="text-gray-600 mt-2">Our reviews are verified and genuine, making it easier for you to make informed decisions.</p>
+                        <p className="text-black mt-2">Our reviews are verified and genuine, making it easier for you to make informed decisions.</p>
                     </div>
-                    <div className="p-4 bg-white shadow-lg rounded-md">
+                    <div className="p-4  bg-green-400 shadow-lg rounded-md">
                         <h3 className="font-bold text-lg">Wide Variety</h3>
-                        <p className="text-gray-600 mt-2">We cover a diverse range of services to cater to everyone's needs.</p>
+                        <p className="text-black mt-2">We cover a diverse range of services to cater to everyone's needs.</p>
                     </div>
-                    <div className="p-4 bg-white shadow-lg rounded-md">
+                    <div className="p-4  bg-green-400 shadow-lg rounded-md">
                         <h3 className="font-bold text-lg">Wide Variety</h3>
-                        <p className="text-gray-600 mt-2">We cover a diverse range of services to cater to everyone's needs.</p>
+                        <p className="text-black mt-2">We cover a diverse range of services to cater to everyone's needs.</p>
                     </div>
                 </div>
             </div>
