@@ -76,15 +76,15 @@ const Home = () => {
                 <h2 className="text-3xl font-bold mb-6">Featured Services</h2>
                 <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service) => (
-                        <motion.div 
+                        <motion.div
                             key={service._id}
-                            className="card shadow-lg border bg-violet-300"
+                            className="card shadow-lg border bg-violet-300 text-black"
                         // Placeholder animation, update later
                         >
                             <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
                             <div className="card-body ">
                                 <h3 className="card-title text-lg font-semibold">{service.title}</h3>
-                                <p className="text-gray-600">{service.description.slice(0, 100)}...</p>
+                                <p className=" ">{service.description.slice(0, 100)}...</p>
                                 <p className="font-bold">Price: ${service.price.toFixed(2)}</p>
                                 <Link to={`/services/${service._id}`} className="btn btn-primary mt-4">
                                     See Details

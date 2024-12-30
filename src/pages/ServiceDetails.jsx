@@ -97,7 +97,7 @@ const ServiceDetails = () => {
             <DynamicTitle title="Details" />
             <h1 className="text-3xl font-bold mb-4">{service.title}</h1>
             <img src={service.image} alt={service.title} className="w-full h-60 object-cover mb-4" />
-            <p className="text-gray-700">{service.description}</p>
+            <p className="text-white">{service.description}</p>
             <p className="font-bold mt-4">Category: {service.category}</p>
             <p className="font-bold">Price: ${service.price.toFixed(2)}</p>
             <p className="text-sm text-gray-500">Added by: {service.userEmail}</p>
